@@ -1,0 +1,2 @@
+vim-template https://github.com/aperezdc/vim-template.git
+NERDTree - https://github.com/preservim/nerdtree.git
