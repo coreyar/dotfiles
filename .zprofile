@@ -59,4 +59,5 @@ export LSCOLORS=Exfxcxdxbxegedabagacad
 
 alias delete-branches='git branch | egrep -v "(^\*|master|dev|qa|staging)" | xargs git branch -D'
 alias deeplink='xcrun simctl openurl booted'
-alias bootprj='~/start-tmux.sh'
+alias bootprj='~/.start-tmux.sh'
+alias kmux='tmux kill-server'
