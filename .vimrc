@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'git@github.com:aperezdc/vim-template.git'
 Plugin 'git@github.com:leafgarland/typescript-vim.git'
@@ -37,6 +38,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeShowGitStatus = 1
 let g:NERDTreeUpdateOnWrite = 1
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeFileExtensionHighlightFullName = 1
 
 " vim-airline
 " Enable the list of buffers
