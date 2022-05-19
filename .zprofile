@@ -1,4 +1,4 @@
-
+source ~/.zshrc
 # Work specific env vars and aliases
 source "$HOME/.work"
 

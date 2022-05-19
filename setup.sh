@@ -97,8 +97,8 @@ link_file () {
 
   if [ "$skip" != "true" ]  # "false" or empty
   then
-    ln -s "$1" "$2"
-    success "linked $1 to $2"
+    cp "$1" "$2"
+    success "copied $1 to $2"
   fi
 }
 
