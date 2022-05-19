@@ -1,5 +1,3 @@
-source ~/.zplug/init.zsh
-
 # NVM
 zplug "lukechilds/zsh-nvm"
 
@@ -14,7 +12,6 @@ zstyle ':vcs_info:*' enable git svn
 precmd() {
     vcs_info
 }
-
 
 function tf_prompt_info() {
     # dont show 'default' workspace in home dir

@@ -112,7 +112,99 @@ install_dotfiles () {
     dst="$HOME/$(basename "$src")"
     link_file "$src" "$dst"
   done
+  echo '  Dot files all set!'
 }
 
-install_dotfiles
-echo '  All installed!'
+function runDots() {
+  # https://github.com/donnemartin/dev-setup
+  # Ask for the administrator password upfront
+  sudo -v
+
+  # Keep-alive: update existing `sudo` time stamp until the script has finished
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+  # Run the osxprep.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Updating OSX and installing Xcode command line tools"
+  echo "------------------------------"
+  echo ""
+  ./osxprep.sh
+
+  # Run the brew.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Installing Homebrew along with some common formulae and apps."
+  echo "This might take a while to complete, as some formulae need to be installed from source."
+  echo "------------------------------"
+  echo ""
+  ./brew.sh
+
+  # Run the osx.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Setting sensible OSX defaults."
+  echo "------------------------------"
+  echo ""
+  ./osx.sh
+
+  # Run the node.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Setting up node environment."
+  echo "------------------------------"
+  echo ""
+  ./node.sh
+
+  # Run the python.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Setting up python environment."
+  echo "------------------------------"
+  echo ""
+  ./python.sh
+
+  # Run the git.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Setting up git."
+  echo "------------------------------"
+  echo ""
+  ./git.sh
+
+  # Run the zshell.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Setting up zshell."
+  echo "------------------------------"
+  echo ""
+  ./zshell.sh
+
+  # Run the iterm.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Setting up iterm."
+  echo "------------------------------"
+  echo ""
+  ./iterm.sh
+
+  install_dotfiles
+  echo "------------------------------"
+  echo "Completed running .dots, restart your computer to ensure all updates take effect"
+  echo "------------------------------"
+}
+
+read -p "This script may overwrite existing files in your home directory. Are you sure? (y/n)" -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  runDots $@
+  # Run the cleanup.sh Script
+  echo ""
+  echo "------------------------------"
+  echo "Cleaning up"
+  echo "------------------------------"
+  echo ""
+  ./cleanup.sh
+fi;
+
+unset runDots;

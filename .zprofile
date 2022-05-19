@@ -1,6 +1,6 @@
 
 # Work specific env vars and aliases
-source "$HOME/.clearsummit"
+source "$HOME/.work"
 
 export PATH=/usr/local/bin:$PATH
 
@@ -14,14 +14,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 
 # Customize prompt
-export PYTHONSTARTUP="$HOME/pyprompt.py"
-
-## virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-
-source /usr/local/bin/virtualenvwrapper.sh
+export PYTHONSTARTUP="$HOME/.pyprompt.py"
 
 # Java
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -34,14 +27,6 @@ export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH="~/Library/Android/sdk/platform-tools:$PATH"
 
 export PATH="~/gradle-2.11/bin:$PATH"
-
-# Deno
-export PATH="~/.deno/bin:$PATH"
-
-# Node
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Golang
 GOPATH=~/code
