@@ -9,3 +9,7 @@
 [alias]
     recommit = commit --amend -m
     noedit = commit --amend --no-edit
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore
