@@ -14,9 +14,3 @@ Setups up zsh and contains some termainal customizations such as displaying git 
 
 #### [.zprofile](./.zprofile)
 Most sets up paths for the technologies I use frequently. Also contains some aliased commands
-
-#### [.tmux.conf](./.tmux.conf)
-Customizes tmux
-
-#### [.start-tmux.sh](./.start-tmux.sh)
-Script for launching projects based on project name and paths
