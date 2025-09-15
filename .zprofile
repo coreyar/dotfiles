@@ -1,7 +1,3 @@
-
-# Work specific env vars and aliases
-source "$HOME/.clearsummit"
-
 export PATH=/usr/local/bin:$PATH
 
 # MySQL
