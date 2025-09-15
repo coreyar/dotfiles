@@ -1,6 +1,5 @@
 # dotfiles
 
-Now that I've installed vim plugins and setup a terminal multiplexer it seems time to create a more robust dotfiles repo.
 Includes a script to symlink files from this repo
 
 #### [.vimrc](./.vimrc)
